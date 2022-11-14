@@ -11,7 +11,6 @@ namespace HectorRodriguez
         [SerializeField] private float moveSpeed = 1.0f;
 
 
-
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
