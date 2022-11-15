@@ -28,6 +28,7 @@ namespace HectorRodriguez
         {
             if (collision.tag == "Player")
             {
+                Debug.Log("Hit");
                 FinishQuest();
                 Destroy(gameObject);
             }
