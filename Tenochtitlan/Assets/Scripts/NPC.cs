@@ -84,7 +84,7 @@ public class NPC : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerIsClose = false; ;
+            playerIsClose = false; 
             zeroText();
         }
     }

@@ -35,7 +35,6 @@ namespace HectorRodriguez
             {
                 Debug.Log("Trying to switch");
                 Inventory.instance.SwitchHotbarInventory(item);
-
             }
             else
             {
