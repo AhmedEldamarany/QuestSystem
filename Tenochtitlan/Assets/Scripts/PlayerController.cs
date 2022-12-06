@@ -31,8 +31,8 @@ namespace HectorRodriguez
         }
         private void Start()
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+           // Cursor.lockState = CursorLockMode.Locked;
+           // Cursor.visible = false;
         }
 
 

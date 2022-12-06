@@ -12,7 +12,7 @@ namespace HectorRodriguez
         private Item item;
         public bool isBeingDraged = false;
 
-        public Item Item => Item;
+        public Item Item => item;
 
 
         public void AddItem(Item newItem)

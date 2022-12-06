@@ -99,14 +99,14 @@ namespace HectorRodriguez
 
         private void OpenInventory()
         {
-            ChangeCursorState(false);
+          // ChangeCursorState(false);
             inventoryOpen = true;
             inventoryParent.SetActive(true);
         }
 
         private void CloseInventory()
         {
-            ChangeCursorState(true);
+            //ChangeCursorState(true);
             inventoryOpen = false;
             inventoryParent.SetActive(false);
         }
@@ -127,12 +127,12 @@ namespace HectorRodriguez
         {
             if (lockCursor)
             {
-                Cursor.lockState = CursorLockMode.Locked;
+               // Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
             }
             else
             {
-                Cursor.lockState = CursorLockMode.None;
+               // Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
         }
