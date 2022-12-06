@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HotbarController : MonoBehaviour
+namespace HectorRodriguez
 {
+
+    public class HotbarController : MonoBehaviour
+    {
         public int HotbarSlotSize => gameObject.transform.childCount;
         private List<ItemSlot> hotbarSlots = new List<ItemSlot>();
 
@@ -56,3 +59,4 @@ public class HotbarController : MonoBehaviour
         }
 
     }
+}

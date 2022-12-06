@@ -2,34 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestArrow : MonoBehaviour
+namespace HectorRodriguez
 {
-    public Transform target;
-    public float buffer;
 
-    public Color farColor;
-    public Color closeColor;
-    public float maxDistance;
-
-    private SpriteRenderer rend;
-
-    private void Start()
+    public class QuestArrow : MonoBehaviour
     {
-        rend = GetComponent<SpriteRenderer>();
-    }
-    private void Update()
-    {
-        if (target != null)
+        public Transform target;
+        public float buffer;
+
+        public Color farColor;
+        public Color closeColor;
+        public float maxDistance;
+
+        private SpriteRenderer rend;
+
+        private void Start()
         {
-            Vector2 difference = transform.position - target.position;
-            float angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle + buffer);
-            rend.color = Color.Lerp(closeColor, farColor, DistanceToQuest());
+            rend = GetComponent<SpriteRenderer>();
         }
-    }
+        private void Update()
+        {
+            if (target != null)
+            {
+                Vector2 difference = transform.position - target.position;
+                float angle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0, 0, angle + buffer);
+                rend.color = Color.Lerp(closeColor, farColor, DistanceToQuest());
+            }
+        }
 
-   float DistanceToQuest()
-    {
-        return Mathf.Clamp01(Vector2.Distance(transform.position , target.position) / maxDistance);
+        float DistanceToQuest()
+        {
+            return Mathf.Clamp01(Vector2.Distance(transform.position, target.position) / maxDistance);
+        }
     }
 }

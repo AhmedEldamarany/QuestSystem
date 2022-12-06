@@ -3,68 +3,72 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemSlot : MonoBehaviour
+namespace HectorRodriguez
 {
-    public Image icon;
-    private Item item;
-    public bool isBeingDraged = false;
 
-    public Item Item => Item;
-
-
-    public void AddItem(Item newItem)
+    public class ItemSlot : MonoBehaviour
     {
-        item = newItem;
-        icon.sprite = newItem.icon;
-    }
+        public Image icon;
+        private Item item;
+        public bool isBeingDraged = false;
 
-    public void ClearSlot()
-    {
-        item = null;
-        icon.sprite = null;
-    }    
+        public Item Item => Item;
 
-    public void UseItem()
-    {
-        if (item == null || isBeingDraged == true) return;
 
-        if (Input.GetKey(KeyCode.LeftAlt))
+        public void AddItem(Item newItem)
         {
-            Debug.Log("Trying to switch");
-            Inventory.instance.SwitchHotbarInventory(item);
-
+            item = newItem;
+            icon.sprite = newItem.icon;
         }
-        else
+
+        public void ClearSlot()
         {
-            item.Use();
+            item = null;
+            icon.sprite = null;
         }
-    }
 
-    public void DestroySlot()
-    {
-        Destroy(gameObject);
-    }
-
-    public void OnRemoveButtonClicked()
-    {
-        if(item != null)
+        public void UseItem()
         {
-            Inventory.instance.RemoveItem(item);
+            if (item == null || isBeingDraged == true) return;
+
+            if (Input.GetKey(KeyCode.LeftAlt))
+            {
+                Debug.Log("Trying to switch");
+                Inventory.instance.SwitchHotbarInventory(item);
+
+            }
+            else
+            {
+                item.Use();
+            }
         }
-    }
 
-    public void OnCursorEnter()
-    {
-        if (item == null || isBeingDraged == true) return;
+        public void DestroySlot()
+        {
+            Destroy(gameObject);
+        }
 
-        //display item info
-        GameManager.instance.DisplayItemInfo(item.name, item.GetItemDescription(), transform.position);
-    }
+        public void OnRemoveButtonClicked()
+        {
+            if (item != null)
+            {
+                Inventory.instance.RemoveItem(item);
+            }
+        }
 
-    public void OnCursorExit()
-    {
-        if (item == null) return;
-             
-        GameManager.instance.DestroyItemInfo();
+        public void OnCursorEnter()
+        {
+            if (item == null || isBeingDraged == true) return;
+
+            //display item info
+            GameManager.instance.DisplayItemInfo(item.name, item.GetItemDescription(), transform.position);
+        }
+
+        public void OnCursorExit()
+        {
+            if (item == null) return;
+
+            GameManager.instance.DestroyItemInfo();
+        }
     }
 }
