@@ -19,3 +19,4 @@ MonoBehaviour:
   ingredients:
   - item: {fileID: 11400000, guid: eaef25f6be56441a7af1b8516edd3512, type: 2}
     amount: 2
+  isCrafted: 0

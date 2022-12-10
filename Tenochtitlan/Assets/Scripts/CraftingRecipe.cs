@@ -12,7 +12,7 @@ namespace HectorRodriguez
     {
         public Item result;
         public Ingredient[] ingredients;
-
+        public bool isCrafted;
         private bool CanCraft()
         {
             foreach (Ingredient ingredient in ingredients)
@@ -40,6 +40,7 @@ namespace HectorRodriguez
         {
             if (CanCraft())
             {
+                isCrafted = true; 
                 //remove items
                 RemoveIngredientsFromInventory();
 
