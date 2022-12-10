@@ -14,7 +14,6 @@ namespace HectorRodriguez
         public Sprite icon = null;
         public string itemDescription = "Used for crafting";
 
-
         public virtual void Use()
         {
             Debug.Log("Using" + name);

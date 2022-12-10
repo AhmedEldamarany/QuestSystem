@@ -29,6 +29,8 @@ namespace HectorRodriguez
 
         private void Update()
         {
+            //Do you need this or was just for testing? it now adds to the list on pickup
+
             if (Input.GetKeyDown(KeyCode.X))
             {
                 Item newItem = itemList[Random.Range(0, itemList.Count)];

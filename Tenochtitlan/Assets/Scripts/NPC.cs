@@ -24,6 +24,7 @@ public class NPC : MonoBehaviour
     ButtonClickedEvent onCont;
     bool firstEncounter;
    [SerializeField] UnityEvent onQuestSucced;
+    [SerializeField] TMP_Text CurrentQuestTMP;
     private void Start()
     {
         onCont = contButton.GetComponent<Button>().onClick;
@@ -45,6 +46,7 @@ public class NPC : MonoBehaviour
                     dialoguePanel.SetActive(true);
                     onCont.AddListener(NextLine);
                     StartCoroutine(Typing());
+
                 }
             }
             else //player started the mission of this npc inatance before
@@ -53,12 +55,14 @@ public class NPC : MonoBehaviour
                 {
                     dialoguePanel.SetActive(true);
                     dialogueText.text = "YOU SAVED ME!";
+                    CurrentQuestTMP.text = "";
                     onQuestSucced.Invoke();
                 }
                 else
                 {
                     dialoguePanel.SetActive(true);
                     dialogueText.text = "I STILL NEED YOUR HELP!";
+
                 }
             }
         }
@@ -102,6 +106,7 @@ public class NPC : MonoBehaviour
         {
             zeroText();
             firstEncounter = true;
+            CurrentQuestTMP.text = NeededElixir.name;
         }
     }
 

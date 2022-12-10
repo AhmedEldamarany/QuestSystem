@@ -17,7 +17,7 @@ namespace HectorRodriguez
         public QuestArrow arrow;
 
         public Quest[] allQuests;
-
+        [SerializeField] Item Item;
         private void Start()
         {
             allQuests = FindObjectsOfType<Quest>();
@@ -30,6 +30,7 @@ namespace HectorRodriguez
             {
                 Debug.Log("Hit");
                 FinishQuest();
+
                 Destroy(gameObject);
             }
         }
@@ -40,6 +41,8 @@ namespace HectorRodriguez
             currentColor = completedColor;
             questItem.color = completedColor;
             arrow.gameObject.SetActive(false);
+                Inventory.instance.AddItem(Instantiate(Item));
+
         }
 
         public void OnQuestClick()
