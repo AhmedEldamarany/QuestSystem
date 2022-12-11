@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cc369ec1ab8f44b68fb874275f883ca, type: 3}
-  m_Name: Elixir
+  m_Name: Bone Fractured Medicine
   m_EditorClassIdentifier: 
-  name: Relief of Fatigue Medicine
+  name: Bone Fractured Medicine
   icon: {fileID: 21300000, guid: e7dc7b6572ba249dcbe4ec59c9d1a131, type: 3}
   itemDescription: 
   result: {fileID: 11400000, guid: 071a93aab285e49d6aa3a9579657870a, type: 2}

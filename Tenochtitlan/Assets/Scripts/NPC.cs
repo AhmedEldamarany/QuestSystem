@@ -25,6 +25,7 @@ public class NPC : MonoBehaviour
     bool firstEncounter;
    [SerializeField] UnityEvent onQuestSucced;
     [SerializeField] TMP_Text CurrentQuestTMP;
+    bool QuestDone;
     private void Start()
     {
         onCont = contButton.GetComponent<Button>().onClick;
@@ -51,14 +52,20 @@ public class NPC : MonoBehaviour
             }
             else //player started the mission of this npc inatance before
             {
-                if(NeededElixir.isCrafted)
+                if (NeededElixir.isCrafted)//player succeded
                 {
                     dialoguePanel.SetActive(true);
                     dialogueText.text = "YOU SAVED ME!";
                     CurrentQuestTMP.text = "";
-                    onQuestSucced.Invoke();
+                    if (!QuestDone)
+                    {
+                        onQuestSucced.Invoke();
+                        QuestDone = true;
+                        //todo I would suggest destroying this NPC after the mission is done
+                    }
+
                 }
-                else
+                else //player still looking for medicine
                 {
                     dialoguePanel.SetActive(true);
                     dialogueText.text = "I STILL NEED YOUR HELP!";

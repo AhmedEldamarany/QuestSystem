@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Cough Medicine
   icon: {fileID: 0}
-  itemDescription: Relief of Fatigue Medicine
-  result: {fileID: 11400000, guid: 6804c816cdf0be94e84b6013d783a568, type: 2}
+  itemDescription: Iron Lung Elixir
+  result: {fileID: 11400000, guid: fa2ae8cd8cc217d4d8fb02c11228d203, type: 2}
   ingredients:
   - item: {fileID: 11400000, guid: 3965c400654dd4011b0cd25979272f7b, type: 2}
     amount: 1

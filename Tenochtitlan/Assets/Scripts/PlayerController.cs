@@ -36,7 +36,10 @@ namespace HectorRodriguez
         }
 
 
-
+        public void SlowDown()
+        {
+            CharacterSpeed /= 2f;
+        }
         private void Update()
         {
 
